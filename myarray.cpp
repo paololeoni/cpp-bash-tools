@@ -237,3 +237,11 @@ void print_ov_of_myarray(myarraytot pm, const char nomefile_in[]){
     cout << endl;
 
 }
+
+void intestazione(){
+    
+    cout << endl;
+    cout << "\tEsame Informatica 2022" << endl;
+    cout << "\tNome: Paolo;   " << "Cognome: Leoni;   " << "Numero di matricola: 990447" << endl;
+    
+}
