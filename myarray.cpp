@@ -163,6 +163,24 @@ void merge_sort(int a[],int low,int high){
   } 
 }
 
+void selection_sort(int a[], int N){
+
+     int i, j, min, temp;
+
+    for(i=0;i<N-1;i++)
+    {
+	min=i;
+        for(j=i+1;j<N;j++)
+        	if (a[j]<a[min])
+        	     min= j;
+
+        temp=a[min];
+        a[min]=a[i];
+        a[i]=temp;
+    }
+}
+
+
 
 int pos_min_myArray_ (myarraypunto *pm) {
     
