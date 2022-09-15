@@ -1,0 +1,28 @@
+ssh <username>@tolab.fisica.unimi.it. = log nella mcchina 
+
+ssh -X <username>@<indirizzo_computer> = inoltrare l'output delle applicazioni grafiche da remoto.
+
+scp <username>@<indirizzo_computer>:<file> <file_destinazione> = copiare file da remoto
+exit
+
+pwd (print working directory) = dice la directory in cui siamo
+
+cd = change directory
+
+cd <cartella>, cd - cartella precedente
+
+ls = dice tutti i file in cui siamo
+
+ls -l
+
+mkdir <nome_nuova_cartella> = crea cartella
+
+touch <nome_file> = crea file vuoto
+
+cp <file_da_copiare> <directory_in_cui_copiare> = copiare e spostare files
+
+cat
+
+less <file>
+
+more <file>  = leggere file senza aprirlo
