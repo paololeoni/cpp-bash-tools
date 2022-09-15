@@ -1,4 +1,20 @@
 #include <iostream>
+#include <fstream>
+#include <cmath>
+#include <cstring>
+#include <iomanip>
+
+using namespace std;
+
+
+#define INCR 10
+
+#ifndef _myArray_
+#define _myArray_
+
+//DEFINIZIONE STRUCT
+
+#endif  
 
 void intestazione();
 
