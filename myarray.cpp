@@ -45,13 +45,21 @@ void delete_myArray (myArray *cz) {
 
 // --- RAW --- 
 
+void insert_myArray (myArray *cz, <STRUCT> Z1) {
+    if (cz->used == cz->size) {
+        resize_myArray (cz, (cz->size+INCR));
+    }
+    cz->raw[cz->used] = Z1;
+    (cz->used)++;
+}
+
 void fill_myArray (myArray *cz, const char nomefile_in[]) {
     ifstream flusso_in;
     flusso_in.open (nomefile_in); 
     char * appo;
     for (int i=0; i<3; i++) {
         if (flusso_in.fail()) {
-            cout << BOLDRED << "\nProblema in apertura del file di input. Reinserire nome: " << RESET;
+            cout << "\nProblema in apertura del file di input. Reinserire nome: ";
             cin >> appo;
             flusso_in.clear();
             flusso_in.open (appo);
@@ -66,15 +74,7 @@ void fill_myArray (myArray *cz, const char nomefile_in[]) {
     }
 }
 
-void insert_myArray (myArray *cz, <STRUCT> Z1) {
-    if (cz->used == cz->size) {
-        resize_myArray (cz, (cz->size+INCR));
-    }
-    cz->raw[cz->used] = Z1;
-    (cz->used)++;
-}
-
-void insert_2(myArrayparticella *eliminati, myArrayparticella *pm){
+void insert_eliminati(myArrayparticella *eliminati, myArrayparticella *pm){
 
    inizializza(eliminati, INCR);
    
@@ -123,24 +123,24 @@ void merge_sort(int a[],int low,int high){
   } 
  }
   
- void merge(int a[],int low,int mid,int high){ 
+void merge(double a[],int low,int mid,int high){ 
  //low: indice piu` piccolo dell'array da fondere 
  //mid: mezzo dell'array da fondere 
  //high: indice piu` grande dell'array da fondere 
   
   int h,i,j,k; 
-  int *b; //Abbiamo bisogno di un vettore di appoggio dove copiare i dati 
+  double *b; //Abbiamo bisogno di un vettore di appoggio dove copiare i dati 
   h=low; //Indice libero per scandire vettore di sinistra 
   i=0; //Indica la prima posizione libera dell'array in cui stiamo copiando i dati 
   j=mid+1; //Indice libero per scandire vettore di destra 
   
-  b = new int[high-low+1]; 
+  b = new double[high-low+1]; 
   
   
   while((h<=mid)&&(j<=high)){ //Mentre non hai esaurito uno dei due sottovettori 
   if(a[h]<=a[j]){ 
     b[i]=a[h]; 
-  \ h++; //Avanza di uno con l'indice libero dell'array di sinistra 
+    h++; //Avanza di uno con l'indice libero dell'array di sinistra 
   } 
   else{ 
     b[i]=a[j]; 
@@ -160,7 +160,13 @@ void merge_sort(int a[],int low,int high){
         b[i]=a[k]; 
         i++; 
     } 
-  } 
+  }
+  i=0;
+  for(k=low;k<=high;k++,i++) {
+    a[k]=b[i];
+  }
+  delete []b;
+  b=NULL; 
 }
 
 void selection_sort(int a[], int N){
@@ -220,14 +226,20 @@ void print_ov_myArray (myArrayparticella pm) {
     cout << endl;
 }
 
-void print_ov_of_myarray(myarraytot pm, const char nomefile_in[]){
+void print_ov_of_myarray(myarraytot pm, const char nomefile_out[]){
 
 
     ofstream flussout;
-    flussout.open(const char nomefile_in[]);
-    if(flusso_out.fail()){
-        cout << endl << "errore nell'apertura del file" << endl;
-        return -1;
+    flussout.open(nomefile_out);
+
+    char * appo;
+    for (int i=0; i<3; i++) {
+        if (flussout.fail()) {
+            cout << "\nProblema in apertura del file di input. Reinserire nome: ";
+            cin >> appo;
+            flussout.clear();
+            flussout.open (appo);
+        } 
     }
     
     flussout << "Informazioni relative alle particelle: ";
