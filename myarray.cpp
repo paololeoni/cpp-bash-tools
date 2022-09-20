@@ -76,7 +76,7 @@ void fill_myArray (myArray *cz, const char nomefile_in[]) {
 
 void insert_eliminati(myArrayparticella *eliminati, myArrayparticella *pm){
 
-   inizializza(eliminati, INCR);
+   initialize_myArray(eliminati, INCR);
    
    for (int i=0; i<pm->used; i++)
    {  
@@ -199,19 +199,21 @@ int pos_min_myArray_ (myarraypunto *pm) {
         } 
     }
     return pos; 
+    //return appo;
 }
 
-int pos_max_myArray_ (myarraypunto *pm) {
+int pos_max_myArray_ (myarraypunto *pm) { //N.B. se return appo: occhio al codominio
 
     float appo = pm->raw[0].x; 
     int pos = 0; 
     for (int i=1; i<pm->used; i++) {
         if (pm->raw[i].x > appo) {
             appo = pm->raw[i].x ;
-            pos = i; 
+            pos = i+1; 
         } 
     }
     return pos; 
+    //return appo;
 }
 
 void print_ov_myArray (myArrayparticella pm) {
