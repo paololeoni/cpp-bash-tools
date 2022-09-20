@@ -1,4 +1,4 @@
-#include "funzioni20200212.h"
+#include "funzioni.h"
 
 void intestazione(){
     
