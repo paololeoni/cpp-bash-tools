@@ -12,13 +12,13 @@ void intestazione(){
 void resize_myArray(myArray *cz, int newsize) {
     <STRUCT> * appo;
     if (newsize>(cz->size)) {
-        appo = new interv [newsize];
+        appo = new <STRUCT> [newsize];
         memcpy ((void *) appo, (void *) cz->raw, cz->size * sizeof (<STRUCT>));
         delete [] cz->raw;
         cz->raw = appo;
     }
     if (newsize<cz->size) {
-        appo = new interv [newsize];
+        appo = new <STRUCT> [newsize];
         memcpy ((void *) appo, (void *) cz->raw, newsize * sizeof (<STRUCT>));
         delete [] cz->raw;
         cz->raw = appo;
@@ -28,7 +28,7 @@ void resize_myArray(myArray *cz, int newsize) {
 
 void insert_myArray(myArray *cz, <STRUCT> Z1) {
     if (cz->used == cz->size) {
-        resize_myArrayinterv (cz, (cz->size+INCR));
+        resize_myArray (cz, (cz->size+INCR));
     }
     cz->raw[cz->used] = Z1;
     (cz->used)++;
@@ -71,7 +71,7 @@ void resize_myArrayeliminati (myArrayeliminati *cz, int newsize) {
         cz->raw = appo;
     }
     if (newsize<cz->size) {
-        appo = new interv [newsize];
+        appo = new <STRUCT> [newsize];
         memcpy ((void *) appo, (void *) cz->raw, newsize * sizeof (<STRUCT>));
         delete [] cz->raw;
         cz->raw = appo;
@@ -108,11 +108,11 @@ void insert_eliminati(myArrayeliminati *eliminati, myArray *pm){
    }
 }
 
-void print_ov_of_myarray(myArrayeliminati pm, const char nomefile_in[]){
+void print_ov_of_myarray(myArrayeliminati pm, const char nomefile_out[]){
 
 
     ofstream flussout;
-    flussout.open(nomefile_in);
+    flussout.open(nomefile_out);
 
     char * appo;
     for (int i=0; i<3; i++) {
@@ -178,12 +178,12 @@ void ordinamento(myArrayinterv *pm){
     }
 }
 
-void print_post_sort(myArrayinterv pm, const char nomefile_in[]){
+void print_post_sort(myArrayinterv pm, const char nomefile_out[]){
 
     ordinamento(&pm);
 
     ofstream flussout;
-    flussout.open(nomefile_in, ios::app);
+    flussout.open(nomefile_out, ios::app);
 
     char * appo;
     for (int i=0; i<3; i++) {
