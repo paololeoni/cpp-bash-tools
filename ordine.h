@@ -29,8 +29,10 @@ void fill_myArray (myArray *cz, const char nomefile_in[]) ;
 void initialize_myArrayeliminati (myArrayeliminati *cz, int dim);
 void resize_myArrayeliminati(myArrayeliminati *cz, int newsize) ;
 void insert_eliminati(myArrayeliminati *eliminati, myArray *pm); //inserisce elementi da eliminare in myarray secondo una condizione
+
+
 void print_ov_of_myarray(myArrayeliminati pm, const char nomefile_in[]);
-void remove_at_myArray(myArray *cz, int pos);
+void remove_at_myArray(myArray *cz, int pos); //IMPORTANTE ELIMINA GLI ARRAY!!!
 
 
 void merge(float a[],int low,int mid,int high);
