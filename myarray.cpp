@@ -1,5 +1,15 @@
 #include <iostream>
 
+
+void intestazione(){
+    
+    cout << endl;
+    cout << "\tEsame Informatica 2022" << endl;
+    cout << "\tNome: Paolo;   " << "Cognome: Leoni;   " << "Numero di matricola: 990447" << endl << endl;
+    
+}
+
+
 void initialize_myarray_0 (myArray *cz) {
     cz->size = 0; 
     cz->used = 0; 
@@ -74,7 +84,7 @@ void fill_myArray (myArray *cz, const char nomefile_in[]) {
     }
 }
 
-void insert_eliminati(myArrayparticella *eliminati, myArrayparticella *pm){
+void insert_eliminati(myArray *eliminati, myArray *pm){
 
    initialize_myArray(eliminati, INCR);
    
@@ -83,7 +93,7 @@ void insert_eliminati(myArrayparticella *eliminati, myArrayparticella *pm){
       
       double d = sqrt(pow(pm->raw[i].x,2)+pow(pm->raw[i].y,2)); //condizione per la quale voglio scartare alcuni elementi del myarray 
       
-      if (d>1.25){
+      if (//condizione){
          inserisci(eliminati, pm->raw[i]);
          remove_at_myArray(pm,i);
       }
@@ -188,7 +198,7 @@ void selection_sort(int a[], int N){
 
 
 
-int pos_min_myArray_ (myarraypunto *pm) {
+int pos_min_myArray_ (myarraypunto *pm) { //N.B. se return appo: occhio al codominio
     
     float appo = pm->raw[0].x; 
     int pos{}; 
@@ -268,12 +278,4 @@ void print_ov_of_myarray(myarraytot pm, const char nomefile_out[]){
     }
     cout << endl;
 
-}
-
-void intestazione(){
-    
-    cout << endl;
-    cout << "\tEsame Informatica 2022" << endl;
-    cout << "\tNome: Paolo;   " << "Cognome: Leoni;   " << "Numero di matricola: 990447" << endl << endl;
-    
 }
