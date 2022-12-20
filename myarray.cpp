@@ -317,7 +317,7 @@ void print_ov_of_myArray_sorted(myArray pm, const char nomefile_out[]){
 
 
     ofstream flussout;
-    flussout.open(nomefile_out);
+    flussout.open(nomefile_out, ios::app);
 
     char * appo;
     for (int i=0; i<3; i++) {
@@ -332,11 +332,11 @@ void print_ov_of_myArray_sorted(myArray pm, const char nomefile_out[]){
     flussout:ios(app) << "Informazioni relative agli elementi: ";
 
     for (int i=0; i<pm.used; i++) {
-        flussout:ios(app) << "elemento [" << (i+1) << "] = (";
-        flussout:ios(app) << setw (4) << "POSIZIONE SU X= "<< pm.raw[i].x << ", ";
-        flussout:ios(app) << setw (4) << "POSIZIONE SU Y= "<< pm.raw[i].y << ", ";
-        flussout:ios(app) << setw (4) << "VELOCTA SU X= "<< pm.raw[i].vx << ", ";
-        flussout:ios(app) << setw (4) << "VELOCITA SU Y= "<< pm.raw[i].vy << ")" << endl;
+        flussout << "elemento [" << (i+1) << "] = (";
+        flussout << setw (4) << "POSIZIONE SU X= "<< pm.raw[i].x << ", ";
+        flussout << setw (4) << "POSIZIONE SU Y= "<< pm.raw[i].y << ", ";
+        flussout << setw (4) << "VELOCTA SU X= "<< pm.raw[i].vx << ", ";
+        flussout << setw (4) << "VELOCITA SU Y= "<< pm.raw[i].vy << ")" << endl;
     }
 
     flussout << endl;
