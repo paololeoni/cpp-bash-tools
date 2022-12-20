@@ -30,12 +30,12 @@ void initialize_myArrayeliminati (myArrayeliminati *cz, int dim);
 void resize_myArrayeliminati(myArrayeliminati *cz, int newsize) ;
 void insert_eliminati(myArrayeliminati *eliminati, myArray *pm); //inserisce elementi da eliminare in myarray secondo una condizione
 
-
-void print_ov_of_myarray(myArrayeliminati pm, const char nomefile_in[]);
-void remove_at_myArray(myArray *cz, int pos); //IMPORTANTE ELIMINA GLI ARRAY!!!
+void print_ov_myArray(myArray pm, const char nomefile_out[]);
+void print_ov_of_myarray(myArray pm, const char nomefile_out[]);
+void remove_at_myArray(myArray *cz, int pos);
 
 
 void merge(float a[],int low,int mid,int high);
 void selection_sort(float a[], int N);
-void ordinamento(myArray *pm); //include il merge/selection
-void print_post_sort(myArrayinterv pm, const char nomefile_in[]);
+void selection_sort_out(float a[], int N)
+void print_ov_of_myArray_sorted(myArray pm, const char nomefile_out[])
