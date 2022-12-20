@@ -26,3 +26,7 @@ cat
 less <file>
 
 more <file>  = leggere file senza aprirlo
+
+grep <parola> = cerca parole nel file
+
+more <file> | grep <parola>
