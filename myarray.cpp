@@ -94,7 +94,7 @@ void insert_eliminati(myArray *eliminati, myArray *pm){
       double d = sqrt(pow(pm->raw[i].x,2)+pow(pm->raw[i].y,2)); //condizione per la quale voglio scartare alcuni elementi del myarray 
       
       if (//condizione){
-         inserisci(eliminati, pm->raw[i]);
+         insert_myArray(eliminati, pm->raw[i]);
          remove_at_myArray(pm,i);
       }
       
