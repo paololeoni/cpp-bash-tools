@@ -198,7 +198,7 @@ void selection_sort(int a[], int N){
 
 
 
-int pos_min_myArray_ (myarraypunto *pm) { //N.B. se return appo: occhio al codominio
+int pos_min_myArray_ (myArray *pm) { //N.B. se return appo: occhio al codominio
     
     float appo = pm->raw[0].x; 
     int pos{}; 
@@ -212,7 +212,7 @@ int pos_min_myArray_ (myarraypunto *pm) { //N.B. se return appo: occhio al codom
     //return appo;
 }
 
-int pos_max_myArray_ (myarraypunto *pm) { //N.B. se return appo: occhio al codominio
+int pos_max_myArray_ (myArray *pm) { //N.B. se return appo: occhio al codominio
 
     float appo = pm->raw[0].x; 
     int pos = 0; 
@@ -226,10 +226,10 @@ int pos_max_myArray_ (myarraypunto *pm) { //N.B. se return appo: occhio al codom
     //return appo;
 }
 
-void print_ov_myArray (myArrayparticella pm) {
+void print_ov_myArray (myArray pm) {
     cout << "Informazioni relative alle particelle: ";     
     for (int i=0; i<pm.used; i++) {
-        cout << "particella [" << (i+1) << "] = (";
+        cout << "elemento [" << (i+1) << "] = (";
         cout << setw (4) << "POSIZIONE SU X= "<< pm.raw[i].x << ", ";
         cout << setw (4) << "POSIZIONE SU Y= "<< pm.raw[i].y << ", ";
         cout << setw (4) << "VELOCTA SU X= "<< pm.raw[i].vx << ", ";
@@ -238,7 +238,7 @@ void print_ov_myArray (myArrayparticella pm) {
     cout << endl;
 }
 
-void print_ov_of_myarray(myarraytot pm, const char nomefile_out[]){
+void print_ov_of_myarray(myArray pm, const char nomefile_out[]){
 
 
     ofstream flussout;
@@ -254,10 +254,10 @@ void print_ov_of_myarray(myarraytot pm, const char nomefile_out[]){
         } 
     }
     
-    flussout << "Informazioni relative alle particelle: ";
+    flussout << "Informazioni relative agli elementi: ";
 
     for (int i=0; i<pm.used; i++) {
-        flussout << "particella [" << (i+1) << "] = (";
+        flussout << "elemento [" << (i+1) << "] = (";
         flussout << setw (4) << "POSIZIONE SU X= "<< pm.raw[i].x << ", ";
         flussout << setw (4) << "POSIZIONE SU Y= "<< pm.raw[i].y << ", ";
         flussout << setw (4) << "VELOCTA SU X= "<< pm.raw[i].vx << ", ";
@@ -268,9 +268,9 @@ void print_ov_of_myarray(myarraytot pm, const char nomefile_out[]){
     flussout.clear();
     flussout.close();
 
-    cout << "Informazioni relative alle particelle: ";     
+    cout << "Informazioni relative alle elementi: ";     
     for (int i=0; i<pm.used; i++) {
-        cout << "particella [" << (i+1) << "] = (";
+        cout << "elemento [" << (i+1) << "] = (";
         cout << setw (4) << "POSIZIONE SU X= "<< pm.raw[i].x << ", ";
         cout << setw (4) << "POSIZIONE SU Y= "<< pm.raw[i].y << ", ";
         cout << setw (4) << "VELOCTA SU X= "<< pm.raw[i].vx << ", ";
