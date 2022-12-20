@@ -179,21 +179,54 @@ void merge(double a[],int low,int mid,int high){
   b=NULL; 
 }
 
-void selection_sort(int a[], int N){
+void selection_sort(myArray *pm, int N) {
 
-     int i, j, min, temp;
+  int i, j, min;
+  punto temp;
 
-    for(i=0;i<N-1;i++)
-    {
-	min=i;
-        for(j=i+1;j<N;j++)
-        	if (a[j]<a[min])
-        	     min= j;
+  for (i = 0; i < N - 1; i++) {
 
-        temp=a[min];
-        a[min]=a[i];
-        a[i]=temp;
+    min = i;
+
+    for (j = i + 1; j < N; j++)
+      if (pm->raw[j].m > pm->raw[min].m) {
+        min = j;
+      }
+
+    temp = pm->raw[min];
+    pm->raw[min] = pm->raw[i];
+    pm->raw[i] = temp;
+  }
+}
+	      
+void selection_sort_out(myArray *pm, int N) { //per riordinare in base ad un campo NON della struct
+
+  int i, j, min;
+  punto temp;
+  <type> appo;
+  <type> f[pm->used];
+
+  for (int i = 0; i < pm->used; i++) { //creazione array di appoggio per riordinare 
+    f[i] = //formula; 
+  }
+
+  for (i = 0; i < N - 1; i++) {
+    min = i;
+
+    for (j = i + 1; j < N; j++) {
+      if (f[j] < f[min]) {
+        min = j;
+      }
     }
+
+    temp = pm->raw[min];
+    pm->raw[min] = pm->raw[i];
+    pm->raw[i] = temp;
+
+    appo = f[min];
+    f[min] = f[i];
+    f[i] = appo;
+  }
 }
 
 
