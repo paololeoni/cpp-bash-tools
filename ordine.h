@@ -12,7 +12,15 @@ using namespace std;
 #ifndef _myArray_
 #define _myArray_
 
-//DEFINIZIONE STRUCT
+struct <STRUCT>{
+}
+
+struct myArray{
+  
+  int size, used;
+  struct * raw;
+  
+}
 
 #endif  
 
