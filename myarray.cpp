@@ -198,7 +198,7 @@ void selection_sort(int a[], int N){
 
 
 
-int pos_min_myArray_ (myArray *pm) { //N.B. se return appo: occhio al codominio
+int pos_min_myArray(myArray *pm) { //N.B. se return appo: occhio al codominio
     
     float appo = pm->raw[0].x; 
     int pos{}; 
@@ -212,7 +212,7 @@ int pos_min_myArray_ (myArray *pm) { //N.B. se return appo: occhio al codominio
     //return appo;
 }
 
-int pos_max_myArray_ (myArray *pm) { //N.B. se return appo: occhio al codominio
+int pos_max_myArray(myArray *pm) { //N.B. se return appo: occhio al codominio
 
     float appo = pm->raw[0].x; 
     int pos = 0; 
@@ -238,7 +238,7 @@ void print_ov_myArray (myArray pm) {
     cout << endl;
 }
 
-void print_ov_of_myarray(myArray pm, const char nomefile_out[]){
+void print_ov_of_myArray(myArray pm, const char nomefile_out[]){
 
 
     ofstream flussout;
@@ -262,6 +262,48 @@ void print_ov_of_myarray(myArray pm, const char nomefile_out[]){
         flussout << setw (4) << "POSIZIONE SU Y= "<< pm.raw[i].y << ", ";
         flussout << setw (4) << "VELOCTA SU X= "<< pm.raw[i].vx << ", ";
         flussout << setw (4) << "VELOCITA SU Y= "<< pm.raw[i].vy << ")" << endl;
+    }
+
+    flussout << endl;
+    flussout.clear();
+    flussout.close();
+
+    cout << "Informazioni relative alle elementi: ";     
+    for (int i=0; i<pm.used; i++) {
+        cout << "elemento [" << (i+1) << "] = (";
+        cout << setw (4) << "POSIZIONE SU X= "<< pm.raw[i].x << ", ";
+        cout << setw (4) << "POSIZIONE SU Y= "<< pm.raw[i].y << ", ";
+        cout << setw (4) << "VELOCTA SU X= "<< pm.raw[i].vx << ", ";
+        cout << setw (4) << "VELOCITA SU Y= "<< pm.raw[i].vy << ")" << endl;
+    }
+    cout << endl;
+
+}
+	    
+void print_ov_of_myArray_sorted(myArray pm, const char nomefile_out[]){
+
+
+    ofstream flussout;
+    flussout.open(nomefile_out);
+
+    char * appo;
+    for (int i=0; i<3; i++) {
+        if (flussout.fail()) {
+            cout << "\nProblema in apertura del file di input. Reinserire nome: ";
+            cin >> appo;
+            flussout.clear();
+            flussout.open (appo);
+        } 
+    }
+    
+    flussout:ios(app) << "Informazioni relative agli elementi: ";
+
+    for (int i=0; i<pm.used; i++) {
+        flussout:ios(app) << "elemento [" << (i+1) << "] = (";
+        flussout:ios(app) << setw (4) << "POSIZIONE SU X= "<< pm.raw[i].x << ", ";
+        flussout:ios(app) << setw (4) << "POSIZIONE SU Y= "<< pm.raw[i].y << ", ";
+        flussout:ios(app) << setw (4) << "VELOCTA SU X= "<< pm.raw[i].vx << ", ";
+        flussout:ios(app) << setw (4) << "VELOCITA SU Y= "<< pm.raw[i].vy << ")" << endl;
     }
 
     flussout << endl;
