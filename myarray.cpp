@@ -4,7 +4,7 @@
 void intestazione(){
     
     cout << endl;
-    cout << "\tEsame Informatica 2022" << endl;
+    cout << "\tEsame Informatica 2023" << endl;
     cout << "\tNome: Paolo;   " << "Cognome: Leoni;   " << "Numero di matricola: 990447" << endl << endl;
     
 }
