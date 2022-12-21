@@ -329,7 +329,7 @@ void print_ov_of_myArray_sorted(myArray pm, const char nomefile_out[]){
         } 
     }
     
-    flussout:ios(app) << "Informazioni relative agli elementi: ";
+    flussout << "Informazioni relative agli elementi: ";
 
     for (int i=0; i<pm.used; i++) {
         flussout << "elemento [" << (i+1) << "] = (";
