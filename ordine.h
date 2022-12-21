@@ -45,5 +45,6 @@ void remove_at_myArray(myArray *cz, int pos);
 
 void merge(float a[],int low,int mid,int high);
 void selection_sort(myArray *pm, int N);
-void selection_sort_out(myArray *pm, int N)
-void print_ov_of_myArray_sorted(myArray pm, const char nomefile_out[])
+void selection_sort_out(myArray *pm, int N);
+void print_ov_of_myArray_sorted(myArray pm, const char nomefile_out[]);
+void delete_myArray (myArray *pm);
