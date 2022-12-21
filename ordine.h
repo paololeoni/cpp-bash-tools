@@ -29,7 +29,7 @@ void intestazione();
 
 void initialize_myArray (myArray *cz, int dim);
 void resize_myArray (myArray *cz, int newsize);
-void insert_myArray (myArray *cz, <struct> Z1);
+void insert_myArray (myArray *cz, <STRUCT> Z1);
 
 
 void fill_myArray (myArray *cz, const char nomefile_in[]) ;
