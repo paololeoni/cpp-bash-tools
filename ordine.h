@@ -22,12 +22,6 @@ struct myArray{
   
 };
 
-struct myArrayeliminati{
-  
-  int size, used;
-  struct * raw;
-  
-};
 
 #endif  
 
@@ -41,9 +35,8 @@ void insert_myArray (myArray *cz, <STRUCT> Z1); //crtl d <STRUCT>
 
 void fill_myArray (myArray *cz, const char nomefile_in[]) ; //crtl d <STRUCT>, specificare campi poldo
 
-//void initialize_myArrayeliminati (myArrayeliminati *cz, int dim);
-void resize_myArrayeliminati(myArrayeliminati *cz, int newsize) ;
-void insert_eliminati(myArrayeliminati *eliminati, myArray *pm); //
+void initialize_myArrayeliminati(myArray *el, int dim);
+
 
 void print_ov_myArray(myArray pm, const char nomefile_out[]);
 void print_ov_of_myarray(myArray pm, const char nomefile_out[]);
