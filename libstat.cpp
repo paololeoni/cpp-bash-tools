@@ -23,7 +23,7 @@ float devstd(float v[], int dim){
    return sqrt(accu2/(dim-1));
  
 }
-float minimo(float v[], int dim){
+float min(float v[], int dim){
    float min = v[0];
    for(int i=1; i<dim; i++){
       if(v[i]<min) min = v[i];
@@ -31,7 +31,7 @@ float minimo(float v[], int dim){
 
    return min;
 }
-float massimo(float v[], int dim){
+float max(float v[], int dim){
    float max = v[0];
    for(int i=1; i<dim; i++){
       if(v[i]>max) max = v[i];
