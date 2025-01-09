@@ -5,8 +5,6 @@ esegui:
 	./main20200212.x
 	rm main20200212.x
 	
-	
-	
 funzioni.o : funzioni.h funzioni.cpp
         g++ -c funzioni.cpp
 
